@@ -1,16 +1,22 @@
 # nopp
 
-`NoPP` (No Prototype Pollution) – tiny helper to prevent Prototype Pollution vulnerabilities in your app regardless if they introduced in your own code or in 3rd-party code.
+`NoPP` (No Prototype Pollution) – tiny helper to protect against Prototype Pollution vulnerabilities in your application regardless if they introduced in your own code or in 3rd-party code.
 
-## When to use?
+## Why should you use this package?
 
-You need to use this package in:
+Prototype Pollution vulnerabilities are about 25% of all discovered vulnerabilities in the JS ecosystem and probably the most popular ones.
+While ~25% of them are not fixable by upgrading to a newer version, this package will protect you even in case you're using a package that contains a Prototype Pollution vulnerability 
 
-- CLI applications.
-- Web applications.
-- Front-end application.
+## What type of applications should use this package?
 
-You should not use this package if you implement a package because it can cause a side effects.
+- CLI applications
+- Web applications
+- Front-end application
+
+## You should not use this package in case
+
+- Your code is a library
+- You do <Kiril to add> during run time
 
 ## How to use
 
@@ -30,9 +36,7 @@ or if you use mjs syntax
 import 'nopp';
 ```
 
-## Why?
 
-The Prototype Pollution vulnerabilities are about 25% of all discovered vulnerabilities in NPM ecosystem and probably the most popular ones.
 
 ## Example
 

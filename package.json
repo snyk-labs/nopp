@@ -1,0 +1,29 @@
+{
+  "name": "nopp",
+  "version": "1.0.0",
+  "description": "NoPP (No Prototype Pollution) – tiny helper to prevent Prototype Pollution vulnerabilities in your app regardless if they introduced in your own code or in 3rd-party code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snyk-labs/nopp.git"
+  },
+  "author": "Snyk Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snyk-labs/nopp/issues"
+  },
+  "homepage": "https://github.com/snyk-labs/nopp#readme",
+  "keywords": [
+    "proto",
+    "__proto__",
+    "prototype",
+    "pollution",
+    "poisoning",
+    "safe",
+    "security",
+    "protection"
+  ]
+}

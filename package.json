@@ -1,6 +1,6 @@
 {
   "name": "nopp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NoPP (No Prototype Pollution) – tiny helper to protect against Prototype Pollution vulnerabilities in your application regardless if they introduced in your own code or in 3rd-party code.",
   "main": "index.js",
   "scripts": {

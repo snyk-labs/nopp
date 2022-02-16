@@ -53,8 +53,6 @@ or if you use mjs syntax
 import 'nopp';
 ```
 
-
-
 ## Example
 
 ```javascript
@@ -77,3 +75,25 @@ can cause `TypeError: Cannot redefine property` or
 `TypeError: Cannot assign to read only property` exception and cause DoS
 vulnerability. Please make sure you have `uncaughtException` handler
 implemented.
+
+## FAQ
+
+### Should I prefer `nopp` instead of the `--frozen-intrinsics` Node.js flag?
+
+[`--frozen-intrinsics`](https://nodejs.org/docs/latest-v17.x/api/cli.html#--frozen-intrinsics) added in Node.js v11.12.0 and currently has experimental stability level.
+
+The main purpose of the flag is exactly the same as of this package – to protect runtime from unintended modifications of prototypes.
+
+We believe there is number of reasons why you may prefer using `nopp`:
+
+1. You control when to import the package hence when to freeze prototypes. In many cases application actually modify prototypes a bit to add some tweaks or polyfills. In such cases usage of `--frozen-intrinsics` will be not possible without significant application code refactoring. Unlike `nopp` which should be imported after all other packages and in most of the cases cause no backward compatibility issues.
+2. `nopp` is also applicable for client-side applications. You may prefer to use it for consistency between.
+3. It gives you additional perks if you are Snyk customer. We are able to detect usage of `nopp` and ignore prototype pollution vulnerabilities in your application automatically.
+
+### Is the `--disable-proto` Node.js flag enough to be protected?
+
+No.
+
+[`--disable-proto`](https://nodejs.org/docs/latest-v17.x/api/cli.html#--disable-protomode) added in Node.js v12.17.0. It is able to delete `__proto__` property from the runtime completely and prevent some prototype pollution attack payloads.
+
+Unfortunately, unlike `nopp`, it doesn't protect your application against `constructor.prototype` type of payloads.

@@ -88,7 +88,6 @@ We believe there are numerous reasons why you may prefer using `nopp`:
 
 1. You control when to import the package hence when to freeze prototypes. In many cases application actually modify prototypes a bit to add some tweaks or polyfills. In such cases usage of `--frozen-intrinsics` will be not possible without significant application code refactoring. Unlike `nopp` which should be imported after all other packages and in most of the cases cause no backward compatibility issues.
 2. `nopp` is also applicable for client-side applications. You may prefer to use it for consistency between backend Node.js code and client-side application code.
-3. If you are a [Snyk user](https://snyk.io), we are able to detect the usage of the `nopp` package as part of your application and ignore prototype pollution vulnerabilities in your application code automatically, and help reduce the noise level of your overall security alerts.
 
 ### Is the `--disable-proto` Node.js flag enough to be protected?
 
